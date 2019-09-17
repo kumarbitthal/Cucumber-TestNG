@@ -9,8 +9,9 @@ import org.testng.annotations.Test;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
-
-
+import java.util.logging.Level; 
+import java.util.logging.Logger; 
+import java.util.logging.*; 
 
 @CucumberOptions(
         features = "src/main/java/Features",
@@ -25,6 +26,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
+    private final static Logger LOGGER =  Logger.getLogger(TestRunner.class.getName());
  
     @BeforeClass(alwaysRun = true)
     public void setUpClass() throws Exception {
@@ -33,6 +35,7 @@ public class TestRunner {
  
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
+    	LOGGER.log(Level.INFO, cucumberFeature.toString());
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
  

@@ -19,17 +19,19 @@ public class LoginStepDefinition{
 	
 	 @Given("^user is already on Login Page$")
 	 public void user_already_on_login_page(){
-	 System.setProperty("webdriver.chrome.driver","/Users/naveenkhunteta/Downloads/chromedriver");
+		 System.out.println("LoginStepDefinition.java :: user is already on login");
+	 /*System.setProperty("webdriver.chrome.driver","/Users/naveenkhunteta/Downloads/chromedriver");
 	 driver = new ChromeDriver();
-	 driver.get("https://www.freecrm.com/index.html");
+	 driver.get("https://www.freecrm.com/index.html");*/
 	 }
 	
 	
 	 @When("^title of login page is Free CRM$")
 	 public void title_of_login_page_is_free_CRM(){
-	 String title = driver.getTitle();
+		 System.out.println("LoginStepDefinition.java :: title of login page");
+	 /*String title = driver.getTitle();
 	 System.out.println(title);
-	 Assert.assertEquals("Free CRM in the cloud software boosts sales", title);
+	 Assert.assertEquals("Free CRM in the cloud software boosts sales", title);*/
 	 }
 	
 	 //Reg Exp:
@@ -38,16 +40,17 @@ public class LoginStepDefinition{
 	
 	 @Then("^user enters \"(.*)\" and \"(.*)\"$")
 	 public void user_enters_username_and_password(String username, String password){
-	 driver.findElement(By.name("username")).sendKeys(username);
-	 driver.findElement(By.name("password")).sendKeys(password);
+		 System.out.println("LoginStepDefinition.java :: user enters username: "+username+" and password: "+password);
+	 /*driver.findElement(By.name("username")).sendKeys(username);
+	 driver.findElement(By.name("password")).sendKeys(password);*/
 	 }
 	
 	 @Then("^user clicks on login button$")
 	 public void user_clicks_on_login_button() {
-	 WebElement loginBtn =
+	 /*WebElement loginBtn =
 	 driver.findElement(By.xpath("//input[@type='submit']"));
 	 JavascriptExecutor js = (JavascriptExecutor)driver;
-	 js.executeScript("arguments[0].click();", loginBtn);
+	 js.executeScript("arguments[0].click();", loginBtn);*/
 	 }
 	
 	
